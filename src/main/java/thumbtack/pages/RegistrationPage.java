@@ -23,7 +23,8 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://tt-lem.dev.thumbtack.net/accounts/register")
 
 public class RegistrationPage extends PageObject{
-
+    @FindBy(className = "jcarousel-next")
+    private WebElement btnNextRegistrRole;
     @FindBy(id="5|basic")
     private WebElement freeRegistration;
 
@@ -39,6 +40,9 @@ public class RegistrationPage extends PageObject{
     }
     public void chooseStandardRegistration() {
         element(standardRegistration).click();
+    }
+    public void chooseNextRegistrationRole() {
+        element(btnNextRegistrRole).click();
     }
     public void choosePlusRegistration() {
         element(plusRegistration).click();

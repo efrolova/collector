@@ -75,7 +75,7 @@ public class PaidRegistrationPage extends PageObject {
         element(zipCodeTxt).type("101111");;
     }
     public void setCountry(String country) {
-        element(countryCheckBox).selectByValue("US");
+        element(countryCheckBox).selectByValue("AU");
     }
     public void pressPlaceOrder() {
         element(btnPlaceOrder).click();

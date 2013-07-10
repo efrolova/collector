@@ -41,10 +41,10 @@ public class FreeRegistrationPage extends PageObject {
         element(fullNameTxt).click();
     }
     public void setFullNameTxt(String fullName) {
-        element(fullNameTxt).type("user10");
+        element(fullNameTxt).type("user14");
     }
     public void setEmailTxt(String email) {
-        element(emailTxt).type("user10@thumbtack.net");
+        element(emailTxt).type("user14@thumbtack.net");
     }
     public void setPassTxt(String pass) {
         element(passTxt).type("userpass");

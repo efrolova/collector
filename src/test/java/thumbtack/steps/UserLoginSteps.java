@@ -32,6 +32,11 @@ public class UserLoginSteps extends ScenarioSteps {
     public void searchWellcome(String txtWellcome) {
         onDashboardPage().getTxtWelcome("Wellcome");
     }
+    @Step
+    public void doLogout() {
+        onLandingPage().pressUserDropDown();
+
+    }
     private LandingPage onLandingPage() {
         return getPages().currentPageAt(LandingPage.class);
     }
@@ -59,5 +64,9 @@ public class UserLoginSteps extends ScenarioSteps {
         public void  should_see_dashboard(String txtWellcome)      {
             searchWellcome (txtWellcome);
         }
+    @Step
+    public void  logout()      {
+       doLogout();
+    }
     }
 

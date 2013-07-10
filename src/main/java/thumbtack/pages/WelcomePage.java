@@ -19,7 +19,7 @@ public class WelcomePage extends PageObject {
     }
 
     public void getDefinitions(String termTxt) {
-        element(term).shouldContainText("Successful Registration!");
+        element(term).waitUntilVisible().shouldContainText("Successful Registration!");
     }
     private Converter<WebElement, String> toStrings() {
         return new Converter<WebElement, String>() {

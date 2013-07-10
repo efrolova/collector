@@ -115,6 +115,14 @@ public class UserRegistSteps extends ScenarioSteps {
     public void pressPaidRegistr() {
         onPaidRegistrationPage().pressPlaceOrder();
     }
+    @Step
+    public void pressNextRegistrRole() {
+        onRegistrationPage().chooseNextRegistrationRole();
+    }
+    @Step
+    public void doPlusRegist() {
+        onRegistrationPage().choosePlusRegistration();
+    }
     private LandingPage onLandingPage() {
         return getPages().currentPageAt(LandingPage.class);
     }
@@ -174,11 +182,40 @@ public class UserRegistSteps extends ScenarioSteps {
         inputAdr1(adr1);
         inputAdr2(adr2);
         inputCity(city);
+        waitFor(1000).millisecond();
         inputState(state);
         inputZipCode(zipCode);
         inputCountry(country);
+        waitFor(1000).millisecond();
         pressPaidRegistr();
 
+    }
+    @Step
+    public void plusRegistration(String fullName,String emailTxt,String pass, String re_pass,
+                                 String cardNumber,String cardMonth,String cardYear,
+                                 String securityCode, String adr1,String adr2, String city,String state,
+                                 String zipCode,String country){
+        doPressLinkBenefits();
+        pressNextRegistrRole();
+        doPlusRegist();
+        inputName(fullName);
+        inputEmail(emailTxt);
+        inputPass(pass);
+        inputRePass(re_pass);
+        agreeTearmsCol();
+        inputCardNumber(cardNumber);
+        inputCardMonth(cardMonth);
+        inputCardYear(cardYear);
+        inputSecurityCode(securityCode);
+        inputAdr1(adr1);
+        inputAdr2(adr2);
+        inputCity(city);
+        waitFor(1000).millisecond();
+        inputState(state);
+        inputZipCode(zipCode);
+        inputCountry(country);
+        waitFor(1000).millisecond();
+        pressPaidRegistr();
     }
     }
 
